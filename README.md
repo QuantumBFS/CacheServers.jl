@@ -1,2 +1,3 @@
-# CacheServers.jl
-Cache Servers
+# CacheServers
+
+Definition and implementation of some Cache Servers. (A more general parameter servers).
