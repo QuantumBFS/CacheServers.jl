@@ -33,6 +33,30 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "man/#Base.Distributed.clear!-Tuple{CacheServers.AbstractCacheServer,Any}",
+    "page": "Manual",
+    "title": "Base.Distributed.clear!",
+    "category": "method",
+    "text": "clear!(server, object) -> server\n\nclear the storage in the server of this object.\n\n\n\n"
+},
+
+{
+    "location": "man/#Base.delete!-Tuple{CacheServers.AbstractCacheServer,Any}",
+    "page": "Manual",
+    "title": "Base.delete!",
+    "category": "method",
+    "text": "delete!(server, object) -> server\n\ndelete this object from the server. (the storage will be deleted)\n\n\n\n"
+},
+
+{
+    "location": "man/#Base.push!-Tuple{CacheServers.AbstractCacheServer,Any,Any}",
+    "page": "Manual",
+    "title": "Base.push!",
+    "category": "method",
+    "text": "push!(server, val, object) -> server\n\npush val to the storage of object in the server.\n\n\n\n"
+},
+
+{
     "location": "man/#CacheServers.alloc!-Tuple{CacheServers.AbstractCacheServer,Any,Any}",
     "page": "Manual",
     "title": "CacheServers.alloc!",
@@ -70,30 +94,6 @@ var documenterSearchIndex = {"docs": [
     "title": "CacheServers.update!",
     "category": "method",
     "text": "update!(storage, val) -> storage\n\n\n\n"
-},
-
-{
-    "location": "man/#Base.Distributed.clear!-Tuple{CacheServers.AbstractCacheServer,Any}",
-    "page": "Manual",
-    "title": "Base.Distributed.clear!",
-    "category": "method",
-    "text": "clear!(server, object) -> server\n\nclear the storage in the server of this object.\n\n\n\n"
-},
-
-{
-    "location": "man/#Base.delete!-Tuple{CacheServers.AbstractCacheServer,Any}",
-    "page": "Manual",
-    "title": "Base.delete!",
-    "category": "method",
-    "text": "delete!(server, object) -> server\n\ndelete this object from the server. (the storage will be deleted)\n\n\n\n"
-},
-
-{
-    "location": "man/#Base.push!-Tuple{CacheServers.AbstractCacheServer,Any,Any}",
-    "page": "Manual",
-    "title": "Base.push!",
-    "category": "method",
-    "text": "push!(server, val, object) -> server\n\npush val to the storage of object in the server.\n\n\n\n"
 },
 
 {
