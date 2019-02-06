@@ -2,8 +2,8 @@ module CacheServers
 
 using Compat
 
-export get_server, pull, alloc!, iscached, iscacheable, update!
-import Compat.Distributed: clear!
+export get_server, pull, alloc!, iscached, iscacheable, update!, clear!
+import Distributed: clear!
 import Base: push!, delete!, getindex, show
 
 include("Core.jl")
