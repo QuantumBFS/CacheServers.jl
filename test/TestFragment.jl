@@ -1,4 +1,3 @@
-using Compat
 import CacheServers: iscached, update!, pull, clear!
 
 struct Scalar{T}

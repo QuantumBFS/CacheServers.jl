@@ -1,7 +1,4 @@
-using Compat
-using Compat.Test
-
-using CacheServers
+using Test, CacheServers
 
 struct FakeServer{K, ELT} <: CacheServers.AbstractCacheServer{K, ELT}
 end
