@@ -1,14 +1,11 @@
 module CacheServers
 
-using Compat
-
 export get_server, pull, alloc!, iscached, iscacheable, update!, clear!, push!, delete!
 import Distributed: clear!
 import Base: push!, delete!, getindex, show
 
 include("Core.jl")
 include("Default.jl")
-
 
 @static if haskey(ENV, "DefaultCacheServerType")
     const DefaultServerType = parse(ENV["DefaultCacheServerType"])
