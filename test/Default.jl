@@ -1,7 +1,4 @@
-using Compat
-using Compat.Test
-
-using CacheServers
+using Test, CacheServers
 
 include("TestFragment.jl")
 
