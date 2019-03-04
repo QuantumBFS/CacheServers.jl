@@ -1,40 +1,32 @@
-## Documentation: http://docs.travis-ci.com/user/languages/julia/
+# Documentation: http://docs.travis-ci.com/user/languages/julia/
 language: julia
 os:
   - linux
   - osx
 julia:
   - 1.0
-  - 1.1
   - nightly
+matrix:
+  allow_failures:
+    - julia: nightly
+  fast_finish: true
 notifications:
   email: false
-git:
-  depth: 99999999
 
-# uncomment the following lines to allow failures on nightly julia
-# (tests will run but not make your overall status red)
-matrix:
- allow_failures:
- - julia: nightly
+env:
+  global:
+    - DOCUMENTER_DEBUG=true
 
-## uncomment and modify the following lines to manually install system packages
-#addons:
-#  apt: # apt-get for linux
-#    packages:
-#    - gfortran
-#before_script: # homebrew for mac
-#  - if [ $TRAVIS_OS_NAME = osx ]; then brew install gcc; fi
+jobs:
+  include:
+    - stage: "Documentation"
+      julia: 1.0
+      os: osx
+      script:
+        - julia --project=docs/ -e 'using Pkg; Pkg.instantiate(); Pkg.add(PackageSpec(path=pwd()))'
+        - julia --project=docs/ docs/make.jl
+      after_success: skip
 
-## uncomment the following lines to override the default test script
-#script:
-#  - julia -e 'Pkg.clone(pwd()); Pkg.build("CacheServers"); Pkg.test("CacheServers"; coverage=true)'
 after_success:
-  # push coverage results to Coveralls
-  - julia -e 'cd(Pkg.dir("CacheServers")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
-  # push coverage results to Codecov
-  - julia -e 'cd(Pkg.dir("CacheServers")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'
-  # add Documenter
-  - julia -e 'using Compat.Pkg; Pkg.add("Documenter")'
-  # push documents to gh-pages
-  - julia -e 'using Compat.Pkg; cd(Pkg.dir("CacheServers")); include(joinpath("docs", "make.jl"))'
+  - julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder())'
+  - julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Coveralls.submit(process_folder())'

@@ -39,13 +39,7 @@ function clear!(server::DefaultServer{K}, object::K) where K
 end
 
 function show(io::IO, server::DefaultServer)
-
-    @static if VERSION < v"0.7-"
-        print(io, summary(server))
-    else
-        summary(io, server)
-    end
-
+    summary(io, server)
     for (key, elem) in server.storage
         print(io, key, " => ", elem)
     end
