@@ -1,6 +1,5 @@
 name = "CacheServers"
 uuid = "a921213e-d44a-5460-ac04-5d720a99ba71"
-version = "0.2.0"
 
 [deps]
 Distributed = "8ba89e20-285c-5b6f-9357-94700520ee1b"
